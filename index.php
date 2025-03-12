@@ -17,16 +17,16 @@
             <button class="bar__button yellow"></button>
             <button class="bar__button green"></button>
           </div>
-          <p id="bar__user">user@MacBook-Pro</p>
+          <p id="bar__user">var_dump - user@macbookpro - zsh - 77x28</p>
         </section>
 
         <section id="terminal__body">
           <div id="terminal__output"></div>
           <div id="terminal__prompt">
-            <span id="terminal__prompt--user">user@MacBook-Pro</span>
+            <span id="terminal__prompt--user">var_dump</span>
             <span id="terminal__prompt--location">~</span>
             <span id="terminal__git--name">git:</span>
-            <span id="terminal__git--branch">(main)</span>
+            <span id="terminal__git--branch">main</span>
             <span> $ </span>
             <div id="terminal__input" contenteditable="true"></div>
           </div>
