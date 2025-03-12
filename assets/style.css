@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+
+body {
+    background: linear-gradient(45deg, #1e1e1e 0%, #2a2a2a 100%);
+    font-family: 'SF Mono', 'Ubuntu Mono', monospace;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#terminal {
+    width: 70vw;
+    height: 65vh;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+    border-radius: 7px;
+}
+
+#terminal__bar {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background: #353535;
+}
+
+#bar__buttons {
+    display: flex;
+    align-items: center;
+}
+
+.bar__button {
+    height: 12px;
+    width: 12px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: none;
+}
+
+.red {
+    background: #ff5f56;
+}
+.yellow {
+    background: #ffbd2e;
+}
+.green {
+    background: #27c93f;
+}
+
+#bar__user {
+    color: #d5d0ce;
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 15px;
+}
+
+#terminal__body {
+    background: rgba(0, 0, 0, 0.9);
+    font-family: 'SF Mono', 'Ubuntu Mono', monospace;
+    height: calc(100% - 30px);
+    padding-top: 10px;
+    padding-left: 10px;
+    text-align: left;
+}
+
+#terminal__prompt {
+    display: flex;
+    align-items: center;
+}
+
+#terminal__prompt--user {
+    color: #339a98;
+    font-weight: bold;
+}
+
+#terminal__prompt--location {
+    color: #4878c0;
+}
+
+#terminal__prompt--bling {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#terminal__prompt--cursor {
+    display: inline-block;
+    height: 17px;
+    width: 8px;
+    background: #ffffff;
+    margin-left: 5px;
+    animation: blink 1200ms linear infinite;
+}
+
+#terminal__git--name {
+    color: #a16ae8;
+    font-weight: bold;
+}
+
+#terminal__git--branch {
+    color: red;
+}
+
+#terminal__git--branch::before,
+#terminal__git--branch::after {
+    content: "(";
+    color: #a16ae8;
+}
+
+#terminal__git--branch::after {
+    content: ")";
+}
+
+#terminal__input {
+    display: inline-block;
+    min-width: 10px;
+    outline: none;
+    color: white;
+    font-family: 'SF Mono', 'Ubuntu Mono', monospace;
+    background: none;
+    border: none;
+    flex-grow: 1;
+}
+
+
+@keyframes blink {
+    0%, 49% { background: #ffffff; }
+    50%, 100% { background: transparent; }
+}
+
+@media (max-width: 600px) {
+    #terminal {
+        max-height: 90%;
+        width: 90%;
+    }
+}
