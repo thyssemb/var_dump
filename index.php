@@ -38,22 +38,13 @@
                     echo '</pre>';
                     break;
 
-                case "array":
-                    echo '<pre style="color: white;">';
-                    echo "array(" . count($var) . ") {";
-                    echo '</pre>';
-
-                    foreach ($var as $key => $value) {
-                        echo '<pre style="color: white;">';
-                        echo "  [$key] => ";
-                        my_vardump($value);
-                        echo '</pre>';
-                    }
-                    echo '<pre style="color: white;">';
-                    echo '}';
-                    echo '</pre>';
-                    break;
-
+                   case "array":
+                     echo "array(" . count($var) . ") {<br>";
+                     foreach ($var as $key => $value) {
+                     echo "  [$key] => ";
+                      my_vardump($value);
+                      echo "<br>";
+                      }
                 case "NULL":
                     echo '<pre style="color: white;">';
                     echo "NULL";
