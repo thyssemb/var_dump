@@ -9,31 +9,49 @@
 <body>
     <h2>Var_dump( )</h2>
 
-    <main id="container">
-      <div id="terminal">
-        <section id="terminal__bar">
-          <div id="bar__buttons">
-            <button class="bar__button red"></button>
-            <button class="bar__button yellow"></button>
-            <button class="bar__button green"></button>
-          </div>
-          <p id="bar__user">var_dump - user@macbookpro - zsh - 77x28</p>
-        </section>
+  <?php
+      function my_vardump($var) {
+          $type = gettype($var);
 
-        <section id="terminal__body">
-          <div id="terminal__output"></div>
-          <div id="terminal__prompt">
-            <span id="terminal__prompt--user">var_dump</span>
-            <span id="terminal__prompt--location">~</span>
-            <span id="terminal__git--name">git:</span>
-            <span id="terminal__git--branch">main</span>
-            <span> $ </span>
-            <div id="terminal__input" contenteditable="true"></div>
-          </div>
-        </section>
-      </div>
-    </main>
+          switch ($type) {
+              case "string":
+                  echo '<pre style="background: #222; color: #0f0; padding: 10px; border-radius: 5px;">';
+                  echo "string(".strlen($var).") \"$var\"";
+                  echo '</pre>';
+                  break;
+              case "integer":
+                  echo '<pre style="background: #222; color: #0f0; padding: 10px; border-radius: 5px;">';
+                  echo "int($var)";
+                  echo '</pre>';
+                  break;
+              case "double":
+                  echo '<pre style="background: #222; color: #0f0; padding: 10px; border-radius: 5px;">';
+                  echo "float($var)";
+                  echo '</pre>';
+                  break;
+              case "boolean":
+                  echo '<pre style="background: #222; color: #0f0; padding: 10px; border-radius: 5px;">';
+                  echo "bool(" . ($var ? 'true' : 'false') . ")";
+                  echo '</pre>';
+                  break;
+              case "NULL":
+                  echo '<pre style="background: #222; color: #0f0; padding: 10px; border-radius: 5px;">';
+                  echo "NULL";
+                  echo '</pre>';
+                  break;
+              default:
+                  echo '<pre style="background: #222; color: #0f0; padding: 10px; border-radius: 5px;">';
+                  echo "Type non géré : $type";
+                  echo '</pre>';
+                  break;
+          }
+      }
 
-    <script src="assets/script.js"></script>
+      $test1 = "blabla";
+      echo "<h3>Type string :</h3>";
+      my_vardump($test1);
+
+  ?>
+
 </body>
 </html>
