@@ -68,7 +68,11 @@
             }
         }
 
-        $test1 = ["pomme", "banane", "framboise"];
+        $test1 = [
+            "fruits" => ["pomme", "banane", "framboise"],
+            "légumes" => ["carotte", "poivron", "brocoli"],
+            "boissons" => ["eau", "jus d'orange", "café"]
+        ];
         my_vardump($test1);
 
     ?>
